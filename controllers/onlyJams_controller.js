@@ -7,7 +7,7 @@ const Artist = require('../models/artist.js')
 jams.get('/', (req, res) => {
   Artist.find({}, (err, allArtists) => {
     res.render('index.ejs', {
-      artist: allArtists
+      artists: allArtists
     })
   })
 })
@@ -17,6 +17,17 @@ jams.get('/', (req, res) => {
 //New
 jams.get('/new', (req, res) => {
   res.render('new.ejs')
+})
+
+jams.post('/', (req, res) => {
+  Artist.create(req.body, (err, createdArtist) => {
+    if(err){
+      console.log(err)
+    } else {
+      console.log(req.body)
+      res.redirect('/')
+    }
+  })
 })
 
 

@@ -58,9 +58,9 @@ app.use('/onlyJams', onlyJams_controller)
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.render('index.ejs')
-});
+app.get('/', (req, res) => {
+  res.redirect('/onlyjams')
+})
 
 //___________________
 //Listener
