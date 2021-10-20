@@ -7,14 +7,17 @@ const Artist = require('../models/artist.js')
 jams.get('/', (req, res) => {
   Artist.find({}, (err, allArtists) => {
     res.render('index.ejs', {
-      artists: allArtists
+      artists: allArtists,
+      currentUser: req.session.currentUser
     })
   })
 })
 
 //New
 jams.get('/new', (req, res) => {
-  res.render('new.ejs')
+  res.render('new.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 jams.post('/', (req, res) => {
@@ -32,7 +35,8 @@ jams.post('/', (req, res) => {
 jams.get('/:id/edit', (req, res) => {
   Artist.findById(req.params.id, (err, foundArtist) => {
     res.render('edit.ejs', {
-      artist: foundArtist
+      artist: foundArtist,
+      currentUser: req.session.currentUser
     })
   })
 })
@@ -62,7 +66,8 @@ jams.get('/seed', (req, res) => {
 jams.get('/:id', (req, res) => {
   Artist.findById(req.params.id, (err, foundArtist) => {
     res.render('show.ejs', {
-      artist: foundArtist
+      artist: foundArtist,
+      currentUser: req.session.currentUser
     })
   })
 })
