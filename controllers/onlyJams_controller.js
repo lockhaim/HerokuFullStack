@@ -12,6 +12,14 @@ jams.get('/', (req, res) => {
   })
 })
 
+//Show
+jams.get('/:id', (req, res) => {
+  Artist.findById(req.params.id, (err, foundArtist) => {
+    res.render('show.ejs', {
+      artist: foundArtist
+    })
+  })
+})
 
 
 //New
@@ -30,6 +38,20 @@ jams.post('/', (req, res) => {
   })
 })
 
+//EDIT
+jams.get('/:id/edit', (req, res) => {
+  Artist.findById(req.params.id, (err, foundArtist) => {
+    res.render('edit.ejs', {
+      artist: foundArtist
+    })
+  })
+})
+
+jams.put('/:id', (req, res) => {
+  Artist.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
+    res.redirect('/')
+  })
+})
 
 //Seed
 jams.get('/seed', (req, res) => {

@@ -5,6 +5,13 @@
     <title></title>
   </head>
   <body>
-
+    <nav>
+    </nav>
+    <form action='/onlyjams/<%=artist.id%>?_method=PUT' method='POST'>
+      Name: <input type="text" name="name" value="<%=artist.name%>"><br/>
+      Location: <input type="text" name="location" value="<%=artist.location%>"><br/>
+      Image: <input type="text" name="img" value="<%=artist.img%>"><br/>
+      <input type="submit" value="Submit Artist Changes">
+    </form>
   </body>
 </html>
