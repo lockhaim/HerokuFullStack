@@ -7,6 +7,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+
 //___________________
 //Port
 //___________________
@@ -14,7 +15,6 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3003;
 
 
- 
 //___________________
 //Database
 //___________________
@@ -47,11 +47,19 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 
 //___________________
+// Controllers
+//___________________
+const onlyJams_controller = require('./controllers/onlyJams_controller.js')
+app.use('/onlyJams', onlyJams_controller)
+
+
+
+//___________________
 // Routes
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.render('index.ejs')
 });
 
 //___________________
