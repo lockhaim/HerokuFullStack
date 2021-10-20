@@ -12,16 +12,6 @@ jams.get('/', (req, res) => {
   })
 })
 
-//Show
-jams.get('/:id', (req, res) => {
-  Artist.findById(req.params.id, (err, foundArtist) => {
-    res.render('show.ejs', {
-      artist: foundArtist
-    })
-  })
-})
-
-
 //New
 jams.get('/new', (req, res) => {
   res.render('new.ejs')
@@ -53,6 +43,13 @@ jams.put('/:id', (req, res) => {
   })
 })
 
+//Delete
+jams.delete('/:id', (req, res) => {
+  Artist.findByIdAndDelete(req.params.id, (err, data) => {
+    res.redirect('/')
+  })
+})
+
 //Seed
 jams.get('/seed', (req, res) => {
   Artist.deleteMany({}, () => {})
@@ -61,4 +58,12 @@ jams.get('/seed', (req, res) => {
   })
 })
 
+//Show
+jams.get('/:id', (req, res) => {
+  Artist.findById(req.params.id, (err, foundArtist) => {
+    res.render('show.ejs', {
+      artist: foundArtist
+    })
+  })
+})
 module.exports = jams
