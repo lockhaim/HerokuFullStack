@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>OnlyJams</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <nav>
@@ -24,12 +25,15 @@
         <a href='/onlyJams/<%=artists[i].id%>'><%=artists[i].name%><br/>
           <img class='artist-img' src='<%=artists[i].img%>'></img>
         </a><br/>
+        <% if (currentUser) { %>
         <form action='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
           <input type="submit" value="EDIT">
         </form>
         <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
           <input type="submit" value="DELETE">
         </form>
+        <% } %>
+        <hr>
       <% } %>
       <a href='/onlyjams/new'>Add a new artist!</a>
     </div>

@@ -18,9 +18,12 @@
       <li><a href="/sessions/new">Log In</a></li>
       <% } %>
     </nav>
-    <h1><%=artist.name%></h1>
-    <img src='<%=artist.img%>'></img>
-    <h3><%=artist.location%></h3>
-    <!-- <a href='<%=artist.id%>/new_album'>Add an album</a> -->
+    <form action='/onlyJams/:id/albums' method='POST'>
+      Name: <input type="text" name="name" placeholder="Name"><br/>
+      Genre: <input type="text" name="genre" placeholder="Genre"><br/>
+      Image: <input type="text" name="img" placeholder="Image Link Here"><br/>
+      Tracks: <input type="text" name="track_list" placeholder="Seperate tracks with a comma"><br/>
+      <input type="submit" value="Submit">
+    </form>
   </body>
 </html>

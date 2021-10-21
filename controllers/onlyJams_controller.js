@@ -2,6 +2,15 @@ const express = require('express')
 const jams = express.Router()
 const seed = require('../models/seed.js')
 const Artist = require('../models/artist.js')
+const Album = require('../models/album.js')
+
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
 
 //Index
 jams.get('/', (req, res) => {
@@ -13,7 +22,7 @@ jams.get('/', (req, res) => {
   })
 })
 
-//New
+//New ARTIST
 jams.get('/new', (req, res) => {
   res.render('new.ejs', {
     currentUser: req.session.currentUser
@@ -31,6 +40,24 @@ jams.post('/', (req, res) => {
   })
 })
 
+//New ALBUM
+// jams.get('/:id/new_album', isAuthenticated, (req, res) => {
+//   res.render('new_album.ejs', {
+//     currentUser: req.session.currentUser
+//   })
+// })
+//
+// jams.post('/:id/albums', isAuthenticated, (req, res) => {
+//   Album.create(req.body, (err, createdAlbum) => {
+//     if(err) {
+//       console.log(err)
+//     } else {
+//       console.log(req.body)
+//       res.redirect('/onlyjams/:id')
+//     }
+//   })
+// })
+
 //EDIT
 jams.get('/:id/edit', (req, res) => {
   Artist.findById(req.params.id, (err, foundArtist) => {
@@ -41,14 +68,14 @@ jams.get('/:id/edit', (req, res) => {
   })
 })
 
-jams.put('/:id', (req, res) => {
+jams.put('/:id', isAuthenticated, (req, res) => {
   Artist.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
     res.redirect('/')
   })
 })
 
 //Delete
-jams.delete('/:id', (req, res) => {
+jams.delete('/:id', isAuthenticated, (req, res) => {
   Artist.findByIdAndDelete(req.params.id, (err, data) => {
     res.redirect('/')
   })
