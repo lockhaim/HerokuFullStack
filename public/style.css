@@ -1,7 +1,19 @@
+/* FULL SCREEN */
+
+/* .navbar-link {
+  width: 5vw;
+  height:2.5vh;
+} */
+
+body {
+  background-color: #140330;
+  text-decoration: none;
+  color: #e0cffc;
+}
 h4 {
   text-align: center;
   text-decoration: none;
-  color:black;
+  color:#e0cffc;
   padding: 2px;
   /* border: 2px solid gray; */
 }
@@ -25,19 +37,40 @@ h4 {
   border-radius: 15px;
 }
 
-
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 3vw;
+  z-index: 1;
+  display: flex;
+  background-color: black;
+}
 
 .button {
   background-color: #3d0a91;
-  color: white;
-  box-shadow: 0px 0px 1px 1px #290661;
+  color: #e0cffc;
+  box-shadow: 0px 0px 8px 1px #290661;
   border: 1px solid #290661;
   padding: 10px 20px;
   border-radius: 3px;
   margin: 5px 2px;
-  cursor: crosshair;
   width: 97px;
 }
+
+
+.navbar-button-1 {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 3vh;
+  width: 5vw;
+  border-radius: 1em;
+  align-items: center;
+  text-decoration: none;
+}
+
 
 .button:hover {
   background-color: #843ff3;
@@ -61,6 +94,11 @@ h4 {
 
 #main-header {
   text-align: center;
+}
+
+.login-button {
+  position: absolute;
+  right: 0;
 }
 
 #new-artist {

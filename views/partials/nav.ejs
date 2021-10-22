@@ -1,19 +1,14 @@
-<nav class="nav navbar navbar-expand-lg sticky-top navbar-light justify-content-end navbar-custom">
-  <!-- <div class="container-fluid"> -->
-    <ul class='nav justify-content-end py-3'>
+<nav class="navbar sticky-top ">
+  <div class="container-fluid">
       <% if (currentUser) { %>
       Welcome <%= currentUser.username %>
       <form action="/sessions?_method=DELETE" method="POST">
-        <input type="submit" value="Log Out" class="btn-small red" />
+        <input class ='button' type="submit" value="Log Out"/>
       </form>
       <% } else { %>
-      <li class='nav-item'>
-        <a class='nav-link' href="/users/new">Sign Up</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href="/sessions/new">Log In</a>
-      </li>
+        <a class='navbar button navbar-button-1' ' href="/users/new">Sign Up</a>
+      <a class='navbar button navbar-button-1' href="/sessions/new">Log In</a>
       <% } %>
-    </ul>
-  <!-- </div> -->
+
+  </div>
 </nav>
