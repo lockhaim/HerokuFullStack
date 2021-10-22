@@ -1,12 +1,13 @@
 <nav class="navbar sticky-top ">
   <div class="container-fluid">
       <% if (currentUser) { %>
-      Welcome <%= currentUser.username %>
-      <form action="/sessions?_method=DELETE" method="POST">
-        <input class ='button' type="submit" value="Log Out"/>
+
+      <form class='logout-btn' action="/sessions?_method=DELETE" method="POST">
+        <input class='navbar button navbar-button-1 logout-btn' type="submit" value="Log Out"/>
       </form>
+      <h4 id='welcome-message'>Welcome <%= currentUser.username %></h4>
       <% } else { %>
-        <a class='navbar button navbar-button-1' ' href="/users/new">Sign Up</a>
+      <a class='navbar button navbar-button-1' ' href="/users/new">Sign Up</a>
       <a class='navbar button navbar-button-1' href="/sessions/new">Log In</a>
       <% } %>
 
