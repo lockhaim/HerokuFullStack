@@ -1,6 +1,68 @@
-img {
-  height: 30vh;
-  width: 30vw;
-  max-height: 300px;
-  max-width: 300px;
+h4 {
+  text-align: center;
+  text-decoration: none;
+  color:black;
+  padding: 2px;
+  /* border: 2px solid gray; */
+}
+.artist-link {
+  text-decoration: none;
+}
+.whole-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.artist-img {
+  object-fit: cover;
+  height: 30vmax;
+  width: 30vmax;
+  max-height: 200px;
+  max-width: 200px;
+  border: 2px solid #140330;
+  border-radius: 15px;
+}
+
+
+
+.button {
+  background-color: #3d0a91;
+  color: white;
+  box-shadow: 0px 0px 1px 1px #290661;
+  border: 1px solid #290661;
+  padding: 10px 20px;
+  border-radius: 3px;
+  margin: 5px 2px;
+  cursor: crosshair;
+  width: 97px;
+}
+
+.button:hover {
+  background-color: #843ff3;
+  box-shadow: 1px 5px 3px 1px black;
+
+}
+
+.button:active {
+  background-color: #290661;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  /* align-items: stretch; */
+  align-content: flex-start;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+#main-header {
+  text-align: center;
+}
+
+#new-artist {
+  text-align: center;
 }

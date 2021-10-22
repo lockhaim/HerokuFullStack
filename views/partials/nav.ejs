@@ -1,14 +1,19 @@
-<ul class="right">
-  <li><a href="/fruits/new">Create a new Fruit</a></li>
-  <% if (currentUser) { %>
-  <li>Welcome <%= currentUser.username %></li>
-  <li>
-    <form action="/sessions?_method=DELETE" method="POST">
-      <input type="submit" value="Log Out" class="btn-small red" />
-    </form>
-  </li>
-  <% } else { %>
-  <li><a href="/users/new">Sign Up</a></li>
-  <li><a href="/sessions/new">Log In</a></li>
-  <% } %>
-</ul>
+<nav class="nav navbar navbar-expand-lg sticky-top navbar-light justify-content-end navbar-custom">
+  <!-- <div class="container-fluid"> -->
+    <ul class='nav justify-content-end py-3'>
+      <% if (currentUser) { %>
+      Welcome <%= currentUser.username %>
+      <form action="/sessions?_method=DELETE" method="POST">
+        <input type="submit" value="Log Out" class="btn-small red" />
+      </form>
+      <% } else { %>
+      <li class='nav-item'>
+        <a class='nav-link' href="/users/new">Sign Up</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href="/sessions/new">Log In</a>
+      </li>
+      <% } %>
+    </ul>
+  <!-- </div> -->
+</nav>

@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
     <title>OnlyJams</title>
+    <%- include ('./partials/head.ejs') %>
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <nav>
-      <% if (currentUser) { %>
-      <li>Welcome <%= currentUser.username %></li>
-      <li>
-        <form action="/sessions?_method=DELETE" method="POST">
-          <input type="submit" value="Log Out" class="btn-small red" />
-        </form>
-      </li>
-      <% } else { %>
-      <li><a href="/users/new">Sign Up</a></li>
-      <li><a href="/sessions/new">Log In</a></li>
-      <% } %>
-    </nav>
+    <%- include ('./partials/nav.ejs') %>
+    <h1 id='main-header'>onlyJams Index Page</h1>
     <div class='whole-page'>
-      <h1 id='main-header'>onlyJams Index Page</h1>
+      <img src='http://beamavisuals.com/wp-content/uploads/2016/03/Excision_XVision2012_IdentityFestRukes.jpg'>MAIN IMAGE</img>
       <% for(let i = 0; i < artists.length; i++) { %>
-        <a href='/onlyJams/<%=artists[i].id%>'><%=artists[i].name%><br/>
-          <img class='artist-img' src='<%=artists[i].img%>'></img>
-        </a><br/>
-        <% if (currentUser) { %>
-        <form action='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
-          <input type="submit" value="EDIT">
-        </form>
-        <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
-          <input type="submit" value="DELETE">
-        </form>
-        <% } %>
-        <hr>
+        <div class='flex-container'>
+          <a class='artist-link' href='/onlyJams/<%=artists[i].id%>'>
+            <h4><%=artists[i].name%></h4>
+            <img class='artist-img' src='<%=artists[i].img%>'></img><br/>
+          </a>
+          <% if (currentUser) { %>
+          <div class='button-container'>
+            <a href='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
+              <input class='button' type="submit" href='/onlyJams/<%=artists[i].id%>/edit' value="EDIT">
+            </a>
+            <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
+              <input class='button' type="submit" value="DELETE">
+            </form>
+          </div>
+          <% } %>
+        </div>
       <% } %>
+    </div>
+    <div id='new-artist'>
       <a href='/onlyjams/new'>Add a new artist!</a>
     </div>
   </body>
