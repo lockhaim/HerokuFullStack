@@ -19,7 +19,7 @@ jams.get('/', (req, res) => {
       artists: allArtists,
       currentUser: req.session.currentUser
     })
-  })
+  }).sort({name: 1 })
 })
 
 //New ARTIST
