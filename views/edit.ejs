@@ -5,13 +5,23 @@
     <%- include ('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include ('./partials/nav.ejs') %>
-    <form action='/onlyjams/<%=artist.id%>?_method=PUT' method='POST'>
-      Name: <input type="text" name="name" value="<%=artist.name%>"><br/>
-      Location: <input type="text" name="location" value="<%=artist.location%>"><br/>
-      Image: <input type="text" name="img" value="<%=artist.img%>"><br/>
-      <input type="submit" value="Submit Artist Changes">
-    </form>
+    <div class='sign-in-body'>
+      <h1 class>Edit Artist</h1>
+      <%- include ('./partials/nav.ejs') %>
+      <div class='new-artist-page'>
+        <div class='login-container'>
+          <form class='login-form' action='/onlyjams/<%=artist.id%>?_method=PUT' method='POST'>
+            <img class='edit-page-img' src='<%=artist.img%>'></img>
+            <input class='form' type="text" name="name" value="<%=artist.name%>"><br/>
+            <input class='form' type="text" name="location" value="<%=artist.location%>"><br/>
+            <input class='form' type="text" name="img" value="<%=artist.img%>"><br/>
+            <input class='button mod-btn' type="submit" value="Submit Artist Changes">
+
+          </form>
+
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>

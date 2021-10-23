@@ -1,15 +1,17 @@
-<nav class="navbar sticky-top ">
-  <div class="container-fluid">
+<nav class="navbar sticky-top container-fluid ">
+  <div class='home-nav'>
+    <a class='button home-btn' href='/'>OnlyJams</a>
+  </div>
+  <div class="navbar container-fluid">
+
       <% if (currentUser) { %>
-
       <form class='logout-btn' action="/sessions?_method=DELETE" method="POST">
-        <input class='navbar button navbar-button-1 logout-btn' type="submit" value="Log Out"/>
+        <input class='navbar button logout-btn' type="submit" value="Log Out"/>
       </form>
-      <h4 id='welcome-message'>Welcome <%= currentUser.username %></h4>
+      <p id='welcome-message'>Welcome <%= currentUser.username %></p>
       <% } else { %>
-      <a class='navbar button navbar-button-1' ' href="/users/new">Sign Up</a>
-      <a class='navbar button navbar-button-1' href="/sessions/new">Log In</a>
+      <a class='navbar button navbar-button-1' href="/users/new">Register</a>
+      <a class='navbar button navbar-button-2' href="/sessions/new">Log In</a>
       <% } %>
-
   </div>
 </nav>

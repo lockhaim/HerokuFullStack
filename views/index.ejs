@@ -7,35 +7,36 @@
   </head>
   <body>
     <%- include ('./partials/nav.ejs') %>
-    <h1 id='main-header'>onlyJams Index Page</h1>
+    <div id='main-header'></div>
     <div class='whole-page'>
       <div class='vid-container'>
         <iframe class='responsive-vid' width="1280" height="720" src="https://www.youtube.com/embed/Qxbtsn8qt2w?t=78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+    </div>
         <div class='flex-container'>
-          <% for(let i = 0; i < artists.length; i++) { %>
           <div class='artist-container'>
-            <a class='artist-link' href='/onlyJams/<%=artists[i].id%>'>
+            <% for(let i = 0; i < artists.length; i++) { %>
+              <div class='artist'>
+              <a class='artist-link' href='/onlyJams/<%=artists[i].id%>'>
               <p><%=artists[i].name%></p>
               <img class='artist-img' src='<%=artists[i].img%>'></img><br/>
-            </a>
-            <% if (currentUser) { %>
-            <div class='button-container'>
-              <a href='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
-                <input class='button' type="submit" href='/onlyJams/<%=artists[i].id%>/edit' value="EDIT">
+              <% if (currentUser) { %>
+              <div class='button-container'>
+                <a href='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
+                  <input class='button mod-btn' type="submit" href='/onlyJams/<%=artists[i].id%>/edit' value="EDIT">
+                </a>
+                <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
+                  <input class='button mod-btn' type="submit" value="DELETE">
+                </form>
+                </div>
+                <% } %>
               </a>
-              <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
-                <input class='button' type="submit" value="DELETE">
-              </form>
-              <% } %>
-            </div>
+              </div>
             <% } %>
-          </div>
-
         </div>
-    </div>
+      </div>
     <div id='new-artist'>
-      <a class='link' href='/onlyjams/new'>Add a new artist!</a>
+      <a class='add-artist-link' href='/onlyjams/new'>Add a new artist!</a>
     </div>
   </body>
 </html>
