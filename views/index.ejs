@@ -17,20 +17,20 @@
           <div class='artist-container'>
             <% for(let i = 0; i < artists.length; i++) { %>
               <div class='artist'>
-              <a class='artist-link' href='/onlyJams/<%=artists[i].id%>'>
-              <p><%=artists[i].name%></p>
-              <img class='artist-img' src='<%=artists[i].img%>'></img><br/>
-              <% if (currentUser) { %>
-              <div class='button-container'>
-                <a href='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
-                  <input class='button mod-btn' type="submit" href='/onlyJams/<%=artists[i].id%>/edit' value="EDIT">
-                </a>
-                <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
-                  <input class='button mod-btn' type="submit" value="DELETE">
-                </form>
-                </div>
+                <a class='artist-link' href='/onlyJams/<%=artists[i].id%>'>
+                  <p><%=artists[i].name%></p>
+                  <img class='artist-img' src='<%=artists[i].img%>'></img><br/>
+                  <% if (currentUser) { %>
+                  <div class='button-container'>
+                    <a href='/onlyJams/<%=artists[i].id%>/edit' method='GET'>
+                      <input class='button mod-btn' type="submit" href='/onlyJams/<%=artists[i].id%>/edit' value="EDIT">
+                    </a>
+                    <form action='/onlyJams/<%=artists[i].id%>?_method=DELETE' method='POST'>
+                        <input class='button mod-btn' type="submit" value="DELETE">
+                    </form>
+                  </div>
                 <% } %>
-              </a>
+                </a>
               </div>
             <% } %>
         </div>
