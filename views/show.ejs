@@ -12,6 +12,30 @@
           <h1 class='show-header'><%=artist.name%></h1>
           <img class='artist-img show-art-img' src='<%=artist.img%>'></img>
           <h3 class='artist-location-show'><%=artist.location%></h3>
+          <div class='album-container'>
+          <% for(i = 0 ; i < albums.length; i++) {%>
+            <div class='album'>
+              <a href='#open-modal'>
+                <p><%=albums[i].album_name%></p>
+                <img class='album-img' src='<%=albums[i].album_img%>'>
+              </a>
+              <div id='open-modal' class='modal'>
+                <div class>
+                  <div class='modal-content'>
+                    <img class='modal-img' src='<%=albums[i].album_img%>'>
+                    <ul>
+                      <li class='modal-list'>Name: <%=albums[i].album_name%></li>
+                      <li class='modal-list'>Genre: <%=albums[i].album_genre%></li>
+                      <li class='modal-list'>Tracks: <%=albums[i].album_track_list%></li>
+                    </ul>
+                    <a href='#' class='close-modal button'>Close</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          <% } %>
+          </div>
           <a href='<%=artist.id%>/new_album'>Add an album</a>
         </div>
       </div>
