@@ -8,10 +8,12 @@
     <div class='show-page-body'>
       <%- include ('./partials/nav.ejs') %>
       <div class='show-page-main'>
-        <h1 class='show-header'><%=artist.name%></h1>
-        <img class='artist-img show-art-img' src='<%=artist.img%>'></img>
-        <h3 class='artist-location-show'><%=artist.location%></h3>
-        <a href='<%=artist.id%>/new_album'>Add an album</a>
+        <div class='artist-show'>
+          <h1 class='show-header'><%=artist.name%></h1>
+          <img class='artist-img show-art-img' src='<%=artist.img%>'></img>
+          <h3 class='artist-location-show'><%=artist.location%></h3>
+          <a href='<%=artist.id%>/new_album'>Add an album</a>
+        </div>
       </div>
     </div>
   </body>

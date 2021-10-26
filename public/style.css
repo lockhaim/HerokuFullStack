@@ -123,7 +123,7 @@ h1 {
   width: 75%;
   height: 100%;
   padding-top: 41.25%;
-  
+
 }
 
 .responsive-vid {
@@ -193,8 +193,10 @@ h1 {
   /* position: absolute; */
   top: 0;
   left: 0;
+  Right:0;
   width: 100vw;
-  height: auto;
+  height: 3vmax;
+  /* padding-bottom: 5vmax; */
   min-height: 45px;
   z-index: 1;
   display: flex;
@@ -237,6 +239,7 @@ h1 {
   padding-left: 50px;
   padding-right: 35px;
 }
+
 .navbar-button-2 {
   height: 3vh;
   width: 3vw;
@@ -247,6 +250,7 @@ h1 {
   border: none;
   padding:15px;
   padding-right: 35px;
+  right: 0;
 
 }
 
@@ -336,7 +340,7 @@ h1 {
 }
 
 .home-btn {
-  height: 3vh;
+  height: 100%;
   width: 3vw;
   min-width: 50px;
   align-items: center;
@@ -382,12 +386,73 @@ h1 {
 .edit-page-img {
   max-width: 33vw;
   max-height: 33vh;
-  margin-top: -20%;
+  margin-top: -20vmin;
   margin-bottom: 5%;
+  border-radius: 50%;
 }
 
 #welcome-message {
   position: absolute;
-  top: 1vh;
-  right: 10vw;
+  margin-right: 15vmin
+}
+
+
+@media only screen and (max-width: 415px) {
+  .flex-container {
+    margin-top: 0;
+  }
+  .responsive-vid {
+    height: 75%;
+    width: 100%;
+  }
+  .vid-container: {
+    width: 75vmin;
+    height: 75vmax;
+  }
+  *{
+    font-size: .75em;
+  }
+  .button {
+    font-size: .5em;
+    padding: 5px;
+  }
+  .artist-container {
+    width: 100vmin;
+    height:100%;
+  }
+  .artist {
+    width: 30vmin;
+    height: 30vmin;
+    margin-bottom: 10vmax;
+  }
+  .artist-img {
+    object-fit: cover;
+    height: 30vmax;
+    width: 30vmax;
+    max-height: 100%;
+    max-width: 100%;
+    /* border: 2px solid #140330; */
+    border-radius: 50%;
+  }
+  .button-container {
+    justify-content: center;
+  }
+  .button {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .show-art-img {
+    margin-top: 17vmax;
+    max-height: 50vmin;
+    max-width: 50vmin;
+  }
+  .edit-page-img {
+    margin-top: 0;
+  }
+  .sign-in-h1{
+    padding-top: 10vmax;
+  }
+  .sign-in-body{
+    margin-top: -12vmin;
+  }
 }
