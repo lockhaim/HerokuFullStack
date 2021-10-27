@@ -35,6 +35,19 @@ a {
     90% {border-color: #140330;}
     100% {border-color: #000000}
 }
+@-webkit-keyframes Background {
+    0% {background-color: #000000;}
+    10% {background-color: #140330;}
+    20% {background-color: #280561;}
+    30% {background-color: #3c0891;}
+    40% {background-color: #510ac2;}
+    50% {background-color: #6610f2;}
+    60% {background-color: #843df5;}
+    70% {background-color: #a26ef7;}
+    80% {background-color: #c19efa;}
+    90% {background-color: #e0cffc;}
+    100% {background-color: #ffffff}
+}
 
 body {
   /* background-color: #140330; */
@@ -372,10 +385,14 @@ h1 {
 .button:hover {
   background-color: #843ff3;
   box-shadow: 1px 5px 3px 1px black;
+  -webkit-animation: Border 1.5s infinite alternate;
+  -webkit-animation: Background 1.5 infinite alternate;
 }
 .mod-btn:hover {
   background-color: #843ff3;
   box-shadow: 1px 5px 3px 1px black;
+  -webkit-animation: Border 1.5s infinite alternate;
+  -webkit-animation: Background 1.5s infinite alternate;
 }
 
 .button:active {
@@ -582,14 +599,3 @@ h1 {
     right:0;
   }
 }
-
-
-
-/* @-webkit-keyframes Border {
-    0% {border-color: crimson;}
-    20% {border-color: orange;}
-    40% {border-color: goldenrod;}
-    60% {border-color: green;}
-    80% {border-color: DarkBlue;}
-    100% {border-color: purple}
-} */
