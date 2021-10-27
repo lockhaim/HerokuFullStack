@@ -23,12 +23,17 @@ a {
 }
 
 @-webkit-keyframes Border {
-    0% {border-color: crimson;}
-    20% {border-color: orange;}
-    40% {border-color: yellow;}
-    60% {border-color: green;}
-    80% {border-color: DarkBlue;}
-    100% {border-color: purple}
+    0% {border-color: #ffffff;}
+    10% {border-color: #e0cffc;}
+    20% {border-color: #c19efa;}
+    30% {border-color: #a26ef7;}
+    40% {border-color: #843df5;}
+    50% {border-color: #6610f2;}
+    60% {border-color: #510ac2;}
+    70% {border-color: #3c0891;}
+    80% {border-color: #280561;}
+    90% {border-color: #140330;}
+    100% {border-color: #000000}
 }
 
 body {
@@ -199,7 +204,7 @@ h1 {
   margin: 2px;
   border: 3px solid black;
   border-radius: 5%;
-  -webkit-animation: Border 5s infinite alternate;
+  -webkit-animation: Border 1.5s infinite alternate;
 }
 
 .show-header{
@@ -303,6 +308,9 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.modal-container{
+  display: flex;
+}
 
 .modal:target {
   visibility: visible;
@@ -314,15 +322,17 @@ h1 {
   display: flex;
   align-items: center;
   margin: 10vmin;
-  position: absolute;
+  -webkit-animation: Border 1.5s infinite alternate;
+  /* position: absolute;
   top: 15vmin;
   left: 15vmin;
-  position: absolute;
+  position: absolute; */
   width: auto;
   height: auto;
   max-width: 1000px;
   background: black;
   padding: 10vmin;
+  align-items: center;
 }
 
 .modal-img {
@@ -471,7 +481,11 @@ h1 {
   position: absolute;
   margin-right: 15vmin
 }
-
+.close-modal {
+  position: relative;
+  bottom: -22.5vh;
+  right:-5vw;
+}
 
 @media only screen and (max-width: 415px) {
   .flex-container {
@@ -545,7 +559,7 @@ h1 {
     align-items: flex-start;
     align-content: flex-start;
     margin: 5px;
-
+    overflow: scroll;
     max-height: 70vh;
     max-width: 85vw;
     top:15vmin;
@@ -559,15 +573,17 @@ h1 {
   /* max-width:300px; */
   }
   li {
-
+    padding: 10px;
+    margin: 2px;
+  }
+  .close-modal {
+    position: relative;
+    bottom: -16.5vh;
+    right:0;
   }
 }
 
-.close-modal {
-  position: absolute;
-  bottom: 0;
-  right:0;
-}
+
 
 /* @-webkit-keyframes Border {
     0% {border-color: crimson;}

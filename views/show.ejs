@@ -15,22 +15,21 @@
           <div class='album-container'>
           <% for(i = 0 ; i < albums.length; i++) {%>
             <div class='album'>
-              <a href='#open-modal'>
+              <a href='#open-modal<%=i%>'>
                 <p><%=albums[i].album_name%></p>
                 <img class='album-img' src='<%=albums[i].album_img%>'>
               </a>
-              <div id='open-modal' class='modal'>
-                <div class>
+              <div id='open-modal<%=i%>' class='modal'>
+                <div class='modal-container'>
                   <div class='modal-content'>
                     <img class='modal-img' src='<%=albums[i].album_img%>'>
                     <ul>
-                      <li class='modal-list'>Name: <%=albums[i].album_name%></li>
-                      <li class='modal-list'>Genre: <%=albums[i].album_genre%></li>
-                      <li class='modal-list'>Tracks: <%=albums[i].album_track_list%></li>
+                      <li class='modal-list'>Name: <br/> <%=albums[i].album_name%></li><br/><br/>
+                      <li class='modal-list'>Genre: <br/> <%=albums[i].album_genre%></li><br/><br/>
+                      <li class='modal-list'>Tracks: <br/> <%=albums[i].album_track_list%></li><br/><br/>
                     </ul>
                     <a href='#' class='close-modal button'>Close</a>
                   </div>
-
                 </div>
               </div>
             </div>
