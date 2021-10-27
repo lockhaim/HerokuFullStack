@@ -486,10 +486,14 @@ h1 {
   font-size: 1em;
 }
 
+/* .edit-h1 {
+  margin-bottom: 20vmin
+} */
+
 .edit-page-img {
   max-width: 33vw;
   max-height: 33vh;
-  margin-top: -20vmin;
+  margin-top: -15vmin;
   margin-bottom: 5%;
   border-radius: 50%;
 }
